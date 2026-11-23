@@ -7,6 +7,8 @@ beforeAll(async () => {
     browser = await puppeteer.launch({
         headless: true,
         args: ['--no-sandbox'],
+        executablePath:
+            'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     });
 });
 
@@ -32,7 +34,7 @@ describe('HTML', () => {
 
     it('Заголовок первого уровня содержит текст', async () => {
         const textLength = await page.evaluate(
-            () => document.querySelectorAll('h1')[0]?.textContent?.length
+            () => document.querySelectorAll('h1')[0]?.textContent?.length,
         );
 
         expect(textLength).toBeGreaterThan(1);
@@ -48,7 +50,7 @@ describe('HTML', () => {
 
     it('Заголовок второго уровня содержит текст', async () => {
         const textLength = await page.evaluate(
-            () => document.querySelectorAll('h2')[0]?.textContent?.length
+            () => document.querySelectorAll('h2')[0]?.textContent?.length,
         );
 
         expect(textLength).toBeGreaterThan(1);
