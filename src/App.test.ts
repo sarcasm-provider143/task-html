@@ -7,8 +7,6 @@ beforeAll(async () => {
     browser = await puppeteer.launch({
         headless: true,
         args: ['--no-sandbox'],
-        executablePath:
-            'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     });
 });
 
